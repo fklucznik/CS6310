@@ -22,13 +22,16 @@ public class Courses {
 		private String courseName;
 		private String offeringOne;
 		private String offeringTwo;
+		private String offeringThree;
 		
 	//constructor
-		public Courses(int initCourseID, String initCourseName, String initOfferingOne, String initOfferingTwo){
+		public Courses(int initCourseID, String initCourseName, 
+				String initOfferingOne, String initOfferingTwo, String initOfferingThree){
 			courseID = initCourseID;
 			courseName = initCourseName;
 			offeringOne = initOfferingOne;
 			offeringTwo = initOfferingTwo;
+			offeringThree= initOfferingThree;
 		}
 		
 		public Courses (){
@@ -36,6 +39,7 @@ public class Courses {
 			courseName = "";
 			offeringOne = "";
 			offeringTwo = "";
+			offeringThree = "";
 		}
 		
 	//setter methods
@@ -55,6 +59,10 @@ public class Courses {
 			this.offeringTwo = newValue;
 		}
 		
+		public void setOfferingThree(String newValue){
+			this.offeringThree = newValue;
+		}
+		
 		//getter methods
 		public int getCourseID(){
 			return courseID;
@@ -70,7 +78,11 @@ public class Courses {
 		
 		public String getOfferingTwo(){
 			return offeringTwo;
-		}		
+		}	
+		
+		public String getOfferingThree(){
+			return offeringThree;
+		}
 		
 		//other methods
 		/**
@@ -102,6 +114,11 @@ public class Courses {
 			    if (courses.length == 4){
 				    System.out.println("courses [courseID = " + courses[0] + ", courseName = "
 				    + courses[1] + ", offeringOne = " + courses[2] + ", offeringTwo = " + courses[3] + "]");		    	
+			   }
+			    if (courses.length == 5){
+				    System.out.println("courses [courseID = " + courses[0] + ", courseName = "
+				    + courses[1] + ", offeringOne = " + courses[2] + ", offeringTwo = " + courses[3] 
+				    		+ ", offeringThree = " + courses[4] + "]");		    	
 			   }
 			  }
 
@@ -181,6 +198,12 @@ public class Courses {
 			    	if (Objects.equals("Summer", courses[2]))count++;
 			    	if (Objects.equals("Summer", courses[3]))count++;
 			    }
+			    
+			    if (courses.length == 5){
+			    	if (Objects.equals("Summer", courses[2]))count++;
+			    	if (Objects.equals("Summer", courses[3]))count++;
+			    	if (Objects.equals("Summer", courses[4]))count++;
+			    }
 			   }
 			  } catch (FileNotFoundException e) {
 			   e.printStackTrace();
@@ -225,6 +248,12 @@ public class Courses {
 			    if (courses.length == 4){
 			    	if (Objects.equals("Fall", courses[2]))count++;
 			    	if (Objects.equals("Fall", courses[3]))count++;
+			    }
+			    
+			    if (courses.length == 5){
+			    	if (Objects.equals("Fall", courses[2]))count++;
+			    	if (Objects.equals("Fall", courses[3]))count++;
+			    	if (Objects.equals("Fall", courses[4]))count++;
 			    }
 			   }
 			  } catch (FileNotFoundException e) {
@@ -271,6 +300,12 @@ public class Courses {
 			    	if (Objects.equals("Spring", courses[2]))count++;
 			    	if (Objects.equals("Spring", courses[3]))count++;
 			    }
+		
+			    if (courses.length == 5){
+			    	if (Objects.equals("Spring", courses[2]))count++;
+			    	if (Objects.equals("Spring", courses[3]))count++;
+			    	if (Objects.equals("Spring", courses[4]))count++;
+			    }
 			   }
 
 			  } catch (FileNotFoundException e) {
@@ -311,23 +346,30 @@ public class Courses {
 			    
 			    //create record object to store values
 			    Courses courseObject = new Courses();
-			    
-			    if (courses.length  == 4){
+
+			    if (courses.length  == 5){
 			    //add values from csv to courseObject
 			    courseObject.setCourseID(Integer.parseInt(courses[0]));    
 			    courseObject.setCourseName(courses[1]);		    
 			    courseObject.setOfferingOne(courses[2]);
 			    courseObject.setOfferingTwo(courses[3]);
-			    } else if (courses.length == 3){
-				    //add values from csv to courseObject
-				    courseObject.setCourseID(Integer.parseInt(courses[0]));    
-				    courseObject.setCourseName(courses[1]);		    
-				    courseObject.setOfferingOne(courses[2]);
-				    } else if (courses.length == 2){
-					    //add values from csv to courseObject
-					    courseObject.setCourseID(Integer.parseInt(courses[0]));    
-					    courseObject.setCourseName(courses[1]);		    
-					    }
+			    courseObject.setOfferingThree(courses[4]);
+			       } else if (courses.length  == 4){
+			       //add values from csv to courseObject
+			       courseObject.setCourseID(Integer.parseInt(courses[0]));    
+			       courseObject.setCourseName(courses[1]);		    
+			       courseObject.setOfferingOne(courses[2]);
+			       courseObject.setOfferingTwo(courses[3]);
+			       } else if (courses.length == 3){
+				       //add values from csv to courseObject
+				       courseObject.setCourseID(Integer.parseInt(courses[0]));    
+				       courseObject.setCourseName(courses[1]);		    
+				       courseObject.setOfferingOne(courses[2]);
+				       } else if (courses.length == 2){
+					       //add values from csv to courseObject
+					       courseObject.setCourseID(Integer.parseInt(courses[0]));    
+					      courseObject.setCourseName(courses[1]);		    
+					      }
 			    
 			    //add record object to the list
 			    coursesList.add(courseObject);
@@ -352,8 +394,10 @@ public class Courses {
 			return coursesList;
 			 }
 
-		/**
-		 * Commented out b/c not using at the moment
+/**
+ * 
+ * Commented out b/c not using right now.
+
 		private static void printCoursesList(List<Courses> coursesList) {
 
 	        //talk through the list
@@ -362,7 +406,7 @@ public class Courses {
 			//print contents of each item in the record object
 		    System.out.println("courses [courseID = " + coursesList.get(i).getCourseID() + ", courseName = "
 				      + coursesList.get(i).getCourseName() + ", offeringOne = " + coursesList.get(i).getOfferingOne() + ", offeringTwo = "
-				      + coursesList.get(i).getOfferingTwo() + "]");
+				      + coursesList.get(i).getOfferingTwo() + ", offeringThree = " + coursesList.get(i).getOfferingThree()+ "]");
 			}
-		}*/
+		} */
 }

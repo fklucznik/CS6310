@@ -12,21 +12,6 @@ public class ProjectOne {
 	 */
 	public static void main(String[] args) {
 		
-		//Import records data
-		//Records.PrintRecords(); 
-		//Records.StoreRecords();
-		
-		//Import courses data
-		//Courses.PrintCourses();
-		//Courses.StoreCourses();
-		
-		//Import students data
-		//Student.PrintStudents();
-		//Student.StoreStudents();
-			
-		//Import instructors data
-		//Instructor.PrintInstructors();
-		
 	    //Calculate the total number of records in the records.csv file
 		System.out.println(Records.RecordCount());
 		

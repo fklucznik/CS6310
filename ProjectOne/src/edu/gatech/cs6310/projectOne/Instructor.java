@@ -105,13 +105,13 @@ public class Instructor extends User{
 	 * Store content of instructors.csv file in ArrayList
 	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
 	*/
-	public static void StoreInstructors() {
+	public static List<Instructor> StoreInstructors() {
 
 		  String csvFileToRead = "instructors.csv";
 		  BufferedReader br = null;
 		  String line = "";
 		  String splitBy = ",";
-		  List<Instructor> recordsList = new ArrayList<Instructor>();
+		  List<Instructor> instructorsList = new ArrayList<Instructor>();
 
 		  try {
 
@@ -131,10 +131,10 @@ public class Instructor extends User{
 		    instructorObject.setPhone(instructors[3]);
 		    
 		    //add instructor object to the list
-		    recordsList.add(instructorObject);
+		    instructorsList.add(instructorObject);
 		   }
-		   //print values stored in the recordsList
-		   printInstructorList(recordsList);
+		   //print values stored in the instructorsList
+		   //printInstructorList(instructorsList);
 
 		  } catch (FileNotFoundException e) {
 		   e.printStackTrace();
@@ -149,19 +149,22 @@ public class Instructor extends User{
 		    }
 		   }
 		  }
-		 System.out.println("Done with instructors.csv");
+		 //System.out.println("Done with instructors.csv");
+		return instructorsList;
 		 }
 
+	/**
+	 * Commented out b/c not using at the moment
 	//print instructors from list array
-	private static void printInstructorList(List<Instructor> recordsList) {
+	private static void printInstructorList(List<Instructor> instructorsList) {
 
         //talk through the list
-		for(int i = 0; i < recordsList.size(); i++){
+		for(int i = 0; i < instructorsList.size(); i++){
 			
 		//print contents of each item in the instructor object
-	    System.out.println("instructors [instructorUUID = " + recordsList.get(i).getUUID() + ", name = "
-			      + recordsList.get(i).getName() + ", address = " + recordsList.get(i).getAddress() + ", phone = "
-			      + recordsList.get(i).getPhone() + "]");
+	    System.out.println("instructors [instructorUUID = " + instructorsList.get(i).getUUID() + ", name = "
+			      + instructorsList.get(i).getName() + ", address = " + instructorsList.get(i).getAddress() + ", phone = "
+			      + instructorsList.get(i).getPhone() + "]");
 		}
-	}	
+	} */	
 }

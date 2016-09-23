@@ -293,7 +293,7 @@ public class Courses {
 		 * Store content of courses.csv file in ArrayList
 		 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
 		*/
-		public static void StoreCourses() {
+		public static List<Courses>  StoreCourses() {
 
 			  String csvFileToRead = "courses.csv";
 			  BufferedReader br = null;
@@ -333,7 +333,7 @@ public class Courses {
 			    coursesList.add(courseObject);
 			   }
 			   //print values stored in the coursesList
-			   printCoursesList(coursesList);
+			   //printCoursesList(coursesList);
 
 			  } catch (FileNotFoundException e) {
 			   e.printStackTrace();
@@ -348,9 +348,12 @@ public class Courses {
 			    }
 			   }
 			  }
-			 System.out.println("Done with courses.csv");
+			 //System.out.println("Done with courses.csv");
+			return coursesList;
 			 }
 
+		/**
+		 * Commented out b/c not using at the moment
 		private static void printCoursesList(List<Courses> coursesList) {
 
 	        //talk through the list
@@ -361,5 +364,5 @@ public class Courses {
 				      + coursesList.get(i).getCourseName() + ", offeringOne = " + coursesList.get(i).getOfferingOne() + ", offeringTwo = "
 				      + coursesList.get(i).getOfferingTwo() + "]");
 			}
-		}
+		}*/
 }

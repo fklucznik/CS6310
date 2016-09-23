@@ -159,7 +159,7 @@ public class Records {
 	 * Store content of records.csv file in ArrayList
 	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
 	*/
-	public static void StoreRecords() {
+	public static List<Records> StoreRecords() {
 
 		  String csvFileToRead = "records.csv";
 		  BufferedReader br = null;
@@ -189,7 +189,7 @@ public class Records {
 		    recordsList.add(recordObject);
 		   }
 		   //print values stored in the recordsList
-		   printRecordsList(recordsList);
+		   //printRecordsList(recordsList);
 
 		  } catch (FileNotFoundException e) {
 		   e.printStackTrace();
@@ -204,9 +204,12 @@ public class Records {
 		    }
 		   }
 		  }
-		 System.out.println("Done with records.csv");
+		 //System.out.println("Done with records.csv");
+		return recordsList;
 		 }
 
+	/**
+	 * Commented out b/c not using at the moment
 	private static void printRecordsList(List<Records> recordsList) {
 
         //talk through the list
@@ -217,5 +220,153 @@ public class Records {
 			      + recordsList.get(i).getCourseID() + ", instructorUUID = " + recordsList.get(i).getInstructorUUID() + ", instructorComments = "
 			      + recordsList.get(i).getInstructorComments() + ", finalGrade = " + recordsList.get(i).getFinalGrade() + "]");
 		}
-	}
+	} */
+	
+	/**
+	 * Store instructorUUIDs from records.csv file in an ArrayList
+	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
+	*/
+	public static List<Integer> StoreRecordsInstructorUUID() {
+
+		  String csvFileToRead = "records.csv";
+		  BufferedReader br = null;
+		  String line = "";
+		  String splitBy = ",";
+		  List<Integer> recordsInstructorUUIDList = new ArrayList<Integer>();
+
+		  try {
+			  
+		   //create object to store values
+		   int recordInstructorUUIDObject = 0;
+		   
+		   br = new BufferedReader(new FileReader(csvFileToRead));
+		   while ((line = br.readLine()) != null) {
+            
+			//split on comma
+		    String[] records = line.split(splitBy);
+		     
+		    //add values from csv to recordObject
+		    recordInstructorUUIDObject = Integer.parseInt(records[2]);		    
+		    
+		    //add record object to the list
+		    recordsInstructorUUIDList.add(recordInstructorUUIDObject);
+		   }
+		   //print values stored in the recordsList
+		   //printRecordsList(recordsList);
+
+		  } catch (FileNotFoundException e) {
+		   e.printStackTrace();
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  } finally {
+		   if (br != null) {
+				
+		    try {
+		     br.close();
+		    } catch (IOException e) {
+		     e.printStackTrace();
+		    }
+		   }
+		  }
+		 //System.out.println("Done with records.csv");
+		return recordsInstructorUUIDList;
+		 }
+	
+	/**
+	 * Store courseID from records.csv file in an ArrayList
+	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
+	*/
+	public static List<Integer> StoreRecordsCourseID() {
+
+		  String csvFileToRead = "records.csv";
+		  BufferedReader br = null;
+		  String line = "";
+		  String splitBy = ",";
+		  List<Integer> recordsCourseIDList = new ArrayList<Integer>();
+
+		  try {
+			  
+		   //create object to store values
+		   int recordCourseIDObject = 0;
+		   
+		   br = new BufferedReader(new FileReader(csvFileToRead));
+		   while ((line = br.readLine()) != null) {
+            
+			//split on comma
+		    String[] records = line.split(splitBy);
+		     
+		    //add values from csv to recordObject
+		    recordCourseIDObject = Integer.parseInt(records[1]);		    
+		    
+		    //add record object to the list
+		    recordsCourseIDList.add(recordCourseIDObject);
+		   }
+		   //print values stored in the recordsList
+		   //printRecordsList(recordsList);
+
+		  } catch (FileNotFoundException e) {
+		   e.printStackTrace();
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  } finally {
+		   if (br != null) {
+		    try {
+		     br.close();
+		    } catch (IOException e) {
+		     e.printStackTrace();
+		    }
+		   }
+		  }
+		 //System.out.println("Done with records.csv");
+		return recordsCourseIDList;
+		 }
+	
+	/**
+	 * Store studentUUID from records.csv file in an ArrayList
+	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
+	*/
+	public static List<Integer> StoreRecordsStudentUUID() {
+
+		  String csvFileToRead = "records.csv";
+		  BufferedReader br = null;
+		  String line = "";
+		  String splitBy = ",";
+		  List<Integer> recordsStudentUUIDList = new ArrayList<Integer>();
+
+		  try {
+			  
+		   //create object to store values
+		   int recordStudentUUIDObject = 0;
+		   
+		   br = new BufferedReader(new FileReader(csvFileToRead));
+		   while ((line = br.readLine()) != null) {
+            
+			//split on comma
+		    String[] records = line.split(splitBy);
+		     
+		    //add values from csv to recordObject
+		    recordStudentUUIDObject = Integer.parseInt(records[0]);		    
+		    
+		    //add record object to the list
+		    recordsStudentUUIDList.add(recordStudentUUIDObject);
+		   }
+		   //print values stored in the recordsList
+		   //printRecordsList(recordsList);
+
+		  } catch (FileNotFoundException e) {
+		   e.printStackTrace();
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  } finally {
+		   if (br != null) {
+		    try {
+		     br.close();
+		    } catch (IOException e) {
+		     e.printStackTrace();
+		    }
+		   }
+		  }
+		 //System.out.println("Done with records.csv");
+		return recordsStudentUUIDList;
+		 }
 }

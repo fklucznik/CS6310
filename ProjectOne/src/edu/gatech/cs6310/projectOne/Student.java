@@ -105,13 +105,13 @@ public class Student extends User{
 	 * Store content of students.csv file in ArrayList
 	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
 	*/
-	public static void StoreStudents() {
+	public static List<Student> StoreStudents() {
 
 		  String csvFileToRead = "students.csv";
 		  BufferedReader br = null;
 		  String line = "";
 		  String splitBy = ",";
-		  List<Student> recordsList = new ArrayList<Student>();
+		  List<Student> studentsList = new ArrayList<Student>();
 
 		  try {
 
@@ -131,10 +131,10 @@ public class Student extends User{
 		    studentObject.setPhone(students[3]);
 		    
 		    //add student object to the list
-		    recordsList.add(studentObject);
+		    studentsList.add(studentObject);
 		   }
-		   //print values stored in the recordsList
-		   printStudentList(recordsList);
+		   //print values stored in the studentsList
+		   //printStudentList(studentsList);
 
 		  } catch (FileNotFoundException e) {
 		   e.printStackTrace();
@@ -149,21 +149,25 @@ public class Student extends User{
 		    }
 		   }
 		  }
-		 System.out.println("Done with students.csv");
+		 //System.out.println("Done with students.csv");
+		return studentsList;
 		 }
 
+
+	/**
+	 * Commented out b/c not using at the moment
 	//print students from list array
-	private static void printStudentList(List<Student> recordsList) {
+	private static void printStudentList(List<Student> studentsList) {
 
         //talk through the list
-		for(int i = 0; i < recordsList.size(); i++){
+		for(int i = 0; i < studentsList.size(); i++){
 			
 		//print contents of each item in the student object
-	    System.out.println("students [studentUUID = " + recordsList.get(i).getUUID() + ", name = "
-			      + recordsList.get(i).getName() + ", address = " + recordsList.get(i).getAddress() + ", phone = "
-			      + recordsList.get(i).getPhone() + "]");
+	    System.out.println("students [studentUUID = " + studentsList.get(i).getUUID() + ", name = "
+			      + studentsList.get(i).getName() + ", address = " + studentsList.get(i).getAddress() + ", phone = "
+			      + studentsList.get(i).getPhone() + "]");
 		}
-	}
+	}*/
 	
 	 
 }

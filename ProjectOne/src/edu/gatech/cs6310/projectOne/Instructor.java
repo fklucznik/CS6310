@@ -125,10 +125,10 @@ public class Instructor extends User{
 		    Instructor instructorObject = new Instructor();
 		    
 		    //add values from csv to instructorObject
-		    instructorObject.setUUID(Integer.parseInt(instructors[0]));
-		    instructorObject.setName(instructors[1]);		    
-		    instructorObject.setAddress(instructors[2]);		    
-		    instructorObject.setPhone(instructors[3]);
+		    instructorObject.SetUUID(Integer.parseInt(instructors[0]));
+		    instructorObject.SetName(instructors[1]);		    
+		    instructorObject.SetAddress(instructors[2]);		    
+		    instructorObject.SetPhone(instructors[3]);
 		    
 		    //add instructor object to the list
 		    instructorsList.add(instructorObject);
@@ -162,9 +162,9 @@ public class Instructor extends User{
 		for(int i = 0; i < instructorsList.size(); i++){
 			
 		//print contents of each item in the instructor object
-	    System.out.println("instructors [instructorUUID = " + instructorsList.get(i).getUUID() + ", name = "
-			      + instructorsList.get(i).getName() + ", address = " + instructorsList.get(i).getAddress() + ", phone = "
-			      + instructorsList.get(i).getPhone() + "]");
+	    System.out.println("instructors [instructorUUID = " + instructorsList.Get(i).GetUUID() + ", name = "
+			      + instructorsList.Get(i).GetName() + ", address = " + instructorsList.Get(i).GetAddress() + ", phone = "
+			      + instructorsList.Get(i).GetPhone() + "]");
 		}
 	} */	
 }

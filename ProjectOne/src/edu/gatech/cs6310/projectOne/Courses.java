@@ -42,45 +42,45 @@ public class Courses {
 			offeringThree = "";
 		}
 		
-	//setter methods
-		public void setCourseID(int newValue){
+	//Setter methods
+		public void SetCourseID(int newValue){
 			this.courseID = newValue;
 		}
 		
-		public void setCourseName(String newValue){
+		public void SetCourseName(String newValue){
 			this.courseName = newValue;
 		}
 		
-		public void setOfferingOne(String newValue){
+		public void SetOfferingOne(String newValue){
 			this.offeringOne = newValue;
 		}
 		
-		public void setOfferingTwo(String newValue){
+		public void SetOfferingTwo(String newValue){
 			this.offeringTwo = newValue;
 		}
 		
-		public void setOfferingThree(String newValue){
+		public void SetOfferingThree(String newValue){
 			this.offeringThree = newValue;
 		}
 		
-		//getter methods
-		public int getCourseID(){
+		//Getter methods
+		public int GetCourseID(){
 			return courseID;
 		}
 		
-		public String getCourseName(){
+		public String GetCourseName(){
 			return courseName;
 		}
 		
-		public String getOfferingOne(){
+		public String GetOfferingOne(){
 			return offeringOne;
 		}
 		
-		public String getOfferingTwo(){
+		public String GetOfferingTwo(){
 			return offeringTwo;
 		}	
 		
-		public String getOfferingThree(){
+		public String GetOfferingThree(){
 			return offeringThree;
 		}
 		
@@ -349,26 +349,26 @@ public class Courses {
 
 			    if (courses.length  == 5){
 			    //add values from csv to courseObject
-			    courseObject.setCourseID(Integer.parseInt(courses[0]));    
-			    courseObject.setCourseName(courses[1]);		    
-			    courseObject.setOfferingOne(courses[2]);
-			    courseObject.setOfferingTwo(courses[3]);
-			    courseObject.setOfferingThree(courses[4]);
+			    courseObject.SetCourseID(Integer.parseInt(courses[0]));    
+			    courseObject.SetCourseName(courses[1]);		    
+			    courseObject.SetOfferingOne(courses[2]);
+			    courseObject.SetOfferingTwo(courses[3]);
+			    courseObject.SetOfferingThree(courses[4]);
 			       } else if (courses.length  == 4){
 			       //add values from csv to courseObject
-			       courseObject.setCourseID(Integer.parseInt(courses[0]));    
-			       courseObject.setCourseName(courses[1]);		    
-			       courseObject.setOfferingOne(courses[2]);
-			       courseObject.setOfferingTwo(courses[3]);
+			       courseObject.SetCourseID(Integer.parseInt(courses[0]));    
+			       courseObject.SetCourseName(courses[1]);		    
+			       courseObject.SetOfferingOne(courses[2]);
+			       courseObject.SetOfferingTwo(courses[3]);
 			       } else if (courses.length == 3){
 				       //add values from csv to courseObject
-				       courseObject.setCourseID(Integer.parseInt(courses[0]));    
-				       courseObject.setCourseName(courses[1]);		    
-				       courseObject.setOfferingOne(courses[2]);
+				       courseObject.SetCourseID(Integer.parseInt(courses[0]));    
+				       courseObject.SetCourseName(courses[1]);		    
+				       courseObject.SetOfferingOne(courses[2]);
 				       } else if (courses.length == 2){
 					       //add values from csv to courseObject
-					       courseObject.setCourseID(Integer.parseInt(courses[0]));    
-					      courseObject.setCourseName(courses[1]);		    
+					       courseObject.SetCourseID(Integer.parseInt(courses[0]));    
+					      courseObject.SetCourseName(courses[1]);		    
 					      }
 			    
 			    //add record object to the list
@@ -404,9 +404,9 @@ public class Courses {
 			for(int i = 0; i < coursesList.size(); i++){
 				
 			//print contents of each item in the record object
-		    System.out.println("courses [courseID = " + coursesList.get(i).getCourseID() + ", courseName = "
-				      + coursesList.get(i).getCourseName() + ", offeringOne = " + coursesList.get(i).getOfferingOne() + ", offeringTwo = "
-				      + coursesList.get(i).getOfferingTwo() + ", offeringThree = " + coursesList.get(i).getOfferingThree()+ "]");
+		    System.out.println("courses [courseID = " + coursesList.Get(i).GetCourseID() + ", courseName = "
+				      + coursesList.Get(i).GetCourseName() + ", offeringOne = " + coursesList.Get(i).GetOfferingOne() + ", offeringTwo = "
+				      + coursesList.Get(i).GetOfferingTwo() + ", offeringThree = " + coursesList.Get(i).GetOfferingThree()+ "]");
 			}
 		} */
 }

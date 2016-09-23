@@ -125,10 +125,10 @@ public class Student extends User{
 		    Student studentObject = new Student();
 		    
 		    //add values from csv to studentObject
-		    studentObject.setUUID(Integer.parseInt(students[0]));
-		    studentObject.setName(students[1]);		    
-		    studentObject.setAddress(students[2]);		    
-		    studentObject.setPhone(students[3]);
+		    studentObject.SetUUID(Integer.parseInt(students[0]));
+		    studentObject.SetName(students[1]);		    
+		    studentObject.SetAddress(students[2]);		    
+		    studentObject.SetPhone(students[3]);
 		    
 		    //add student object to the list
 		    studentsList.add(studentObject);
@@ -163,9 +163,9 @@ public class Student extends User{
 		for(int i = 0; i < studentsList.size(); i++){
 			
 		//print contents of each item in the student object
-	    System.out.println("students [studentUUID = " + studentsList.get(i).getUUID() + ", name = "
-			      + studentsList.get(i).getName() + ", address = " + studentsList.get(i).getAddress() + ", phone = "
-			      + studentsList.get(i).getPhone() + "]");
+	    System.out.println("students [studentUUID = " + studentsList.Get(i).GetUUID() + ", name = "
+			      + studentsList.Get(i).GetName() + ", address = " + studentsList.Get(i).GetAddress() + ", phone = "
+			      + studentsList.Get(i).GetPhone() + "]");
 		}
 	}*/
 	

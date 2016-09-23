@@ -53,10 +53,10 @@ public class ProjectOne {
 		//declare occurances tracker
 		int occurrences = 0;
 		
-		//get list array of instructors from the instructors.csv file
+		//Get list array of instructors from the instructors.csv file
 		List<Instructor> instructorsList = Instructor.StoreInstructors();
 		
-		//get list array of instructor UUIDs from the records.csv file
+		//Get list array of instructor UUIDs from the records.csv file
 		List<Integer> recordsInstructorUUIDList = Records.StoreRecordsInstructorUUID();
 
 
@@ -65,14 +65,14 @@ public class ProjectOne {
 		for(int i = 0; i < instructorsList.size(); i++){
 			
 		     //count the number of courses a particular instructor has taught	
-		     occurrences = Collections.frequency(recordsInstructorUUIDList, instructorsList.get(i).getUUID());
+		     occurrences = Collections.frequency(recordsInstructorUUIDList, instructorsList.get(i).GetUUID());
 		
 		     //System.out.println("occurrences = " + occurrences);
 		
 		     //increase count if occurrences is 0
 		     if (occurrences == 0) count++;
 		
-		     //reset counter
+		     //reSet counter
 		     occurrences = 0;			
 	     }	
 		return count;
@@ -89,10 +89,10 @@ public class ProjectOne {
 		//declare occurances tracker
 		int occurrences = 0;
 		
-		//get list array of instructors from the instructors.csv file
+		//Get list array of instructors from the instructors.csv file
 		List<Courses> courseIDList = Courses.StoreCourses();
 		
-		//get list array of instructor UUIDs from the records.csv file
+		//Get list array of instructor UUIDs from the records.csv file
 		List<Integer> recordsCourseIDList = Records.StoreRecordsCourseID();
 
 
@@ -101,14 +101,14 @@ public class ProjectOne {
 		for(int i = 0; i < courseIDList.size(); i++){
 			
 		     //count the number of courses a particular instructor has taught	
-		     occurrences = Collections.frequency(recordsCourseIDList, courseIDList.get(i).getCourseID());
+		     occurrences = Collections.frequency(recordsCourseIDList, courseIDList.get(i).GetCourseID());
 		
 		     //System.out.println("occurrences = " + occurrences);
 		
 		     //increase count if occurrences is 0
 		     if (occurrences == 0) count++;
 		
-		     //reset counter
+		     //reSet counter
 		     occurrences = 0;			
 	     }	
 		return count;
@@ -124,10 +124,10 @@ public class ProjectOne {
 		//declare occurances tracker
 		int occurrences = 0;
 		
-		//get list array of instructors from the instructors.csv file
+		//Get list array of instructors from the instructors.csv file
 		List<Student> studentsUUIDList = Student.StoreStudents();
 		
-		//get list array of instructor UUIDs from the records.csv file
+		//Get list array of instructor UUIDs from the records.csv file
 		List<Integer> recordsStudentUUIDList = Records.StoreRecordsStudentUUID();
 
 
@@ -136,14 +136,14 @@ public class ProjectOne {
 		for(int i = 0; i < studentsUUIDList.size(); i++){
 			
 		     //count the number of courses a particular instructor has taught	
-		     occurrences = Collections.frequency(recordsStudentUUIDList, studentsUUIDList.get(i).getUUID());
+		     occurrences = Collections.frequency(recordsStudentUUIDList, studentsUUIDList.get(i).GetUUID());
 		
 		     //System.out.println("occurrences = " + occurrences);
 		
 		     //increase count if occurrences is 0
 		     if (occurrences == 0) count++;
 		
-		     //reset counter
+		     //reSet counter
 		     occurrences = 0;			
 	     }	
 		return count;

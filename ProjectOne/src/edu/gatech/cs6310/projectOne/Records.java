@@ -42,45 +42,45 @@ public class Records {
 		finalGrade = initFinalGrade;
 	}
 	
-	//setter methods
-	public void setStudentUUID(int newValue){
+	//Setter methods
+	public void SetStudentUUID(int newValue){
 		this.studentUUID = newValue;
 	}
 	
-	public void setCourseID(int newValue){
+	public void SetCourseID(int newValue){
 		this.courseID = newValue;
 	}
 	
-	public void setInstructorUUID(int newValue){
+	public void SetInstructorUUID(int newValue){
 		this.instructorUUID = newValue;
 	}
 	
-	public void setInstructorComments(String newValue){
+	public void SetInstructorComments(String newValue){
 		this.instructorComments = newValue;
 	}
 	
-	public void setFinalGrade(char newValue){
+	public void SetFinalGrade(char newValue){
 		this.finalGrade = newValue;
 	}
 	
-	//getter methods
-	public int getStudentUUID(){
+	//Getter methods
+	public int GetStudentUUID(){
 		return studentUUID;
 	}
 	
-	public int getCourseID(){
+	public int GetCourseID(){
 		return courseID;
 	}
 	
-	public int getInstructorUUID(){
+	public int GetInstructorUUID(){
 		return instructorUUID;
 	}
 	
-	public String getInstructorComments(){
+	public String GetInstructorComments(){
 		return instructorComments;
 	}
 	
-	public char getFinalGrade(){
+	public char GetFinalGrade(){
 		return finalGrade;
 	}
 	
@@ -179,11 +179,11 @@ public class Records {
 		    Records recordObject = new Records();
 		    
 		    //add values from csv to recordObject
-		    recordObject.setStudentUUID(Integer.parseInt(records[0]));
-		    recordObject.setCourseID(Integer.parseInt(records[1]));		    
-		    recordObject.setInstructorUUID(Integer.parseInt(records[2]));		    
-		    recordObject.setInstructorComments(records[3]);
-		    recordObject.setFinalGrade(records[4].charAt(0));
+		    recordObject.SetStudentUUID(Integer.parseInt(records[0]));
+		    recordObject.SetCourseID(Integer.parseInt(records[1]));		    
+		    recordObject.SetInstructorUUID(Integer.parseInt(records[2]));		    
+		    recordObject.SetInstructorComments(records[3]);
+		    recordObject.SetFinalGrade(records[4].charAt(0));
 		    
 		    //add record object to the list
 		    recordsList.add(recordObject);
@@ -216,9 +216,9 @@ public class Records {
 		for(int i = 0; i < recordsList.size(); i++){
 			
 		//print contents of each item in the record object
-	    System.out.println("records [studentUUID = " + recordsList.get(i).getStudentUUID() + ", courseID = "
-			      + recordsList.get(i).getCourseID() + ", instructorUUID = " + recordsList.get(i).getInstructorUUID() + ", instructorComments = "
-			      + recordsList.get(i).getInstructorComments() + ", finalGrade = " + recordsList.get(i).getFinalGrade() + "]");
+	    System.out.println("records [studentUUID = " + recordsList.Get(i).GetStudentUUID() + ", courseID = "
+			      + recordsList.Get(i).GetCourseID() + ", instructorUUID = " + recordsList.Get(i).GetInstructorUUID() + ", instructorComments = "
+			      + recordsList.Get(i).GetInstructorComments() + ", finalGrade = " + recordsList.Get(i).GetFinalGrade() + "]");
 		}
 	} */
 	

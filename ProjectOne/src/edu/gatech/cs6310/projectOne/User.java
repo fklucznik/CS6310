@@ -30,37 +30,37 @@ public class User {
 		phone = "";
 	}
 	
-//setter methods
-	public void setUUID(int newValue){
+//Setter methods
+	public void SetUUID(int newValue){
 		this.uuid = newValue;
 	}
 	
-	public void setName(String newValue){
+	public void SetName(String newValue){
 		this.name = newValue;
 	}
 	
-	public void setAddress(String newValue){
+	public void SetAddress(String newValue){
 		this.address = newValue;
 	}
 	
-	public void setPhone(String newValue){
+	public void SetPhone(String newValue){
 		this.phone = newValue;
 	}
 	
-	//getter methods
-		public int  getUUID(){
+	//Getter methods
+		public int  GetUUID(){
 			return uuid;
 		}
 		
-		public String getName(){
+		public String GetName(){
 			return name;
 		}
 		
-		public String getAddress(){
+		public String GetAddress(){
 			return address;
 		}
 		
-		public String getPhone(){
+		public String GetPhone(){
 			return phone;
 		}			
 }

@@ -9,22 +9,26 @@ public class ProjectOne {
 	public static void main(String[] args) {
 		
 		//Import records data
-		//Records.ReadRecords(); 
+		//Records.PrintRecords(); 
+		//Records.StoreRecords();
 		
 		//Import courses data
-		//Courses.ReadCourses();
+		//Courses.PrintCourses();
+		//Courses.StoreCourses();
 		
 		//Import students data
-		//Student.ReadStudents();
+		//Student.PrintStudents();
+		Student.StoreStudents();
 			
 		//Import instructors data
-		//Instructor.ReadInstructors();
+		Instructor.PrintInstructors();
+		Instructor.StoreInstructors();
 		
 	    //Calculate the total number of records in the records.csv file
-		System.out.println(Records.RecordCount());
+		//System.out.println(Records.RecordCount());
 		
 		//Calculate the total number of records in the students.csv file
-		System.out.println(Student.StudentCount());
+		//System.out.println(Student.StudentCount());
 		 
 		//Calculate the number of students who haven’t taken any classes
 		
@@ -35,19 +39,19 @@ public class ProjectOne {
 		 
 		
 		//Calculate the total number of records in the courses.csv file
-		System.out.println(Courses.CourseCount());		 
+		//System.out.println(Courses.CourseCount());		 
 		
 		//Calculate the number of courses that haven’t been taken by any students
 		 
 		
 		//Calculate the total number of courses being offered during the Fall semester
-		System.out.println(Courses.FallCourses());		 
+		//System.out.println(Courses.FallCourses());		 
 		
 		//Calculate the total number of courses being offered during the Spring semester
-		System.out.println(Courses.SpringCourses());		 
+		//System.out.println(Courses.SpringCourses());		 
 		
 		//Calculate the total number of courses being offered during the Summer semester
-		System.out.println(Courses.SummerCourses());	
+		//System.out.println(Courses.SummerCourses());	
 	}
 	
 

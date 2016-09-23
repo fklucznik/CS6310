@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author ubuntu
@@ -22,17 +24,21 @@ public class Student extends User{
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Student (){
+		super();
+	}
+	
 	//methods
 
 	/**
-	 * Read students.csv file
+	 * Prints contents of students.csv file
 	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
 	 * public int uuid
 	 * public String name
 	 * public String address
 	 * public String phone
 	*/
-	public static void ReadStudents() {
+	public static void PrintStudents() {
 
 		  String csvFileToRead = "students.csv";
 		  BufferedReader br = null;
@@ -94,5 +100,70 @@ public class Student extends User{
 		   }
 		 } return count;	
 	}
+	
+	/**
+	 * Store content of students.csv file in ArrayList
+	 * REF:  http://www.beingjavaguys.com/2013/09/read-and-parse-csv-file-in-java.html
+	*/
+	public static void StoreStudents() {
+
+		  String csvFileToRead = "students.csv";
+		  BufferedReader br = null;
+		  String line = "";
+		  String splitBy = ",";
+		  List<Student> recordsList = new ArrayList<Student>();
+
+		  try {
+
+		   br = new BufferedReader(new FileReader(csvFileToRead));
+		   while ((line = br.readLine()) != null) {
+            
+			//split on comma
+		    String[] students = line.split(splitBy);
+		    
+		    //create student object to store values
+		    Student studentObject = new Student();
+		    
+		    //add values from csv to studentObject
+		    studentObject.setUUID(Integer.parseInt(students[0]));
+		    studentObject.setName(students[1]);		    
+		    studentObject.setAddress(students[2]);		    
+		    studentObject.setPhone(students[3]);
+		    
+		    //add student object to the list
+		    recordsList.add(studentObject);
+		   }
+		   //print values stored in the recordsList
+		   printStudentList(recordsList);
+
+		  } catch (FileNotFoundException e) {
+		   e.printStackTrace();
+		  } catch (IOException e) {
+		   e.printStackTrace();
+		  } finally {
+		   if (br != null) {
+		    try {
+		     br.close();
+		    } catch (IOException e) {
+		     e.printStackTrace();
+		    }
+		   }
+		  }
+		 System.out.println("Done with students.csv");
+		 }
+
+	//print students from list array
+	private static void printStudentList(List<Student> recordsList) {
+
+        //talk through the list
+		for(int i = 0; i < recordsList.size(); i++){
+			
+		//print contents of each item in the student object
+	    System.out.println("students [studentUUID = " + recordsList.get(i).getUUID() + ", name = "
+			      + recordsList.get(i).getName() + ", address = " + recordsList.get(i).getAddress() + ", phone = "
+			      + recordsList.get(i).getPhone() + "]");
+		}
+	}
+	
 	 
 }

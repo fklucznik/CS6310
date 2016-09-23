@@ -24,7 +24,7 @@ public class Records {
 	private String instructorComments;
 	private char finalGrade;
 	
-	//constructor
+	//constructors
 	public Records(){
 		studentUUID = 0;
 		courseID = 0;

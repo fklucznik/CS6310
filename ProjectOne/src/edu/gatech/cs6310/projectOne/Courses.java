@@ -24,7 +24,7 @@ public class Courses {
 		private String offeringTwo;
 		private String offeringThree;
 		
-	//constructor
+	//constructors
 		public Courses(int initCourseID, String initCourseName, 
 				String initOfferingOne, String initOfferingTwo, String initOfferingThree){
 			courseID = initCourseID;
